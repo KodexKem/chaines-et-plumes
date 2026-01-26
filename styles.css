@@ -63,7 +63,7 @@ main {
 }
 
 .plate:focus-visible {
-  outline: 2px solid #320f10;
+  outline: 2px solid #98352d;
   outline-offset: 6px;
   border-radius: 14px;
 }
@@ -76,7 +76,7 @@ main {
 
 .plate .line {
   fill: none;
-  stroke: #320f10;
+  stroke: #98352d;
   stroke-width: 6;
   stroke-linecap: round;
 }
@@ -128,7 +128,7 @@ main {
 
 .menu a {
   text-decoration: none;
-  color: #320f10;
+  color: #98352d;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   padding: 12px 12px;
   border-radius: 12px;
@@ -217,6 +217,6 @@ footer {
   padding: 12px 8px;
   background-color: black;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  color: #320f10;
+  color: #98352d;
   text-align: center;
 }
