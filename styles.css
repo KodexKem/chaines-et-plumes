@@ -24,9 +24,9 @@ main {
 }
 
 .hero {
-  min-height: auto;
+  min-height: 100dvh;
   width: 100%;
-  background-image: url("background.png");
+  background-image: url("assets/background.png");
   background-size: 180%;
   background-position: center;
   background-repeat: no-repeat;
@@ -204,6 +204,12 @@ main {
   stroke-dasharray: 5 201;
   stroke-dashoffset: -158px;
   transition-delay: 100ms;
+}
+
+.home {
+  padding: 40px 16px;
+  color: #fff;
+  text-align: center;
 }
 
 footer {
