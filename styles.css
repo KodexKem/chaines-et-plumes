@@ -1,0 +1,216 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: #000;
+
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.hero {
+  min-height: auto;
+  width: 100%;
+  background-image: url("background.png");
+  background-size: 180%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 10px 0;
+  gap: 10px;
+
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+}
+
+.plate {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.plate:focus-visible {
+  outline: 2px solid #320f10;
+  outline-offset: 6px;
+  border-radius: 14px;
+}
+
+.plate svg {
+  width: 72px;
+  height: 72px;
+  display: block;
+}
+
+.plate .line {
+  fill: none;
+  stroke: #320f10;
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.plate .burger,
+.plate .x {
+  position: absolute;
+  inset: 0;
+}
+
+.plate8 .x {
+  transform: scale(0);
+  transform-origin: 50% 50%;
+  transition: transform 400ms 50ms;
+}
+.plate8.is-open .x {
+  transform: scale(1);
+}
+.plate8.is-open .burger {
+  opacity: 0.15;
+}
+
+.menu {
+  width: min(92vw, 420px);
+  display: grid;
+  gap: 10px;
+
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition:
+    max-height 220ms ease,
+    opacity 220ms ease,
+    transform 220ms ease;
+
+  padding: 0 12px;
+}
+
+.menu.is-open {
+  max-height: 320px;
+  opacity: 1;
+  transform: translateY(0);
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(50, 15, 16, 0.35);
+}
+
+.menu a {
+  text-decoration: none;
+  color: #320f10;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding: 12px 12px;
+  border-radius: 12px;
+}
+
+.menu a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.plate8 .line {
+  transition:
+    stroke-dasharray 400ms 100ms,
+    stroke-dashoffset 400ms 100ms,
+    transform 400ms 100ms;
+}
+
+.plate8 .line1 {
+  stroke-dasharray: 21 201;
+}
+.plate8 .line2 {
+  stroke-dasharray: 21 201;
+  transition-delay: 20ms;
+}
+.plate8 .line3 {
+  stroke-dasharray: 21 201;
+  transition-delay: 40ms;
+}
+.plate8 .line4 {
+  stroke-dasharray: 21 201;
+  transition-delay: 60ms;
+}
+.plate8 .line5 {
+  stroke-dasharray: 21 201;
+  transition-delay: 80ms;
+}
+.plate8 .line6 {
+  stroke-dasharray: 21 201;
+  transition-delay: 100ms;
+}
+
+.plate8.is-open .line {
+  transition:
+    stroke-dasharray 400ms,
+    stroke-dashoffset 400ms,
+    transform 400ms;
+}
+
+.plate8.is-open .line1 {
+  stroke-dasharray: 5 201;
+  stroke-dashoffset: -158px;
+}
+.plate8.is-open .line2 {
+  stroke-dasharray: 5 201;
+  stroke-dashoffset: -158px;
+  transition-delay: 20ms;
+}
+.plate8.is-open .line3 {
+  stroke-dasharray: 5 201;
+  stroke-dashoffset: -158px;
+  transition-delay: 40ms;
+}
+.plate8.is-open .line4 {
+  stroke-dasharray: 5 201;
+  stroke-dashoffset: -158px;
+  transition-delay: 60ms;
+}
+.plate8.is-open .line5 {
+  stroke-dasharray: 5 201;
+  stroke-dashoffset: -158px;
+  transition-delay: 80ms;
+}
+.plate8.is-open .line6 {
+  stroke-dasharray: 5 201;
+  stroke-dashoffset: -158px;
+  transition-delay: 100ms;
+}
+
+footer {
+  flex: 0 0 auto;
+  padding: 12px 8px;
+  background-color: black;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #320f10;
+  text-align: center;
+}
