@@ -65,42 +65,44 @@ main {
   display: block;
 }
 
+/* Lignes du burger */
 .plate .line {
   fill: none;
   stroke: #98352d;
   stroke-width: 6;
   stroke-linecap: round;
   transition:
-    transform 0.4s ease,
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
     opacity 0.4s ease;
 }
 
-/* On n'a plus besoin de .burger et .x séparés → on anime directement les 3 lignes */
-
+/* Quand menu ouvert : croix propre + disparition nette */
 .plate.is-open .line1 {
-  transform: translateY(10px) rotate(45deg); /* Ajuste translateY selon l'espacement voulu */
+  transform: translate(14px, 14px) rotate(45deg); /* Ajuste si besoin pour centrer parfaitement */
 }
 
 .plate.is-open .line2 {
-  opacity: 0 !important; /* Force la disparition */
-  visibility: hidden; /* Enlève du flux visuel */
+  opacity: 0;
   transform: scale(
-    0
-  ); /* Option extra : réduit à zéro pour éviter tout résidu */
+    0.01
+  ); /* Réduit à presque rien (plus fiable que opacity seule) */
+  visibility: hidden; /* Force l'invisibilité */
 }
 
 .plate.is-open .line3 {
-  transform: translateY(-10px) rotate(-45deg);
+  transform: translate(14px, -14px) rotate(-45deg);
 }
 
-/* Option : effet gooey sur les lignes quand elles bougent */
+/* Le SVG entier disparaît proprement quand ouvert (sécurité supplémentaire) */
+.plate.is-open .burger {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Effet gooey appliqué au SVG burger */
 .plate .burger {
   filter: url(#gooeyness);
-}
-
-.plate.is-open .burger {
-  opacity: 0 !important;
-  visibility: hidden !important;
 }
 
 /* Le reste reste identique */
