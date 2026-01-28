@@ -16,12 +16,6 @@ burgerBtn.addEventListener("click", () => {
   setOpen(!isOpen);
 });
 
-/* Fermer quand on clique un lien */
 menu.addEventListener("click", (e) => {
   if (e.target.matches("a")) setOpen(false);
-});
-
-/* Fermer avec Escape */
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") setOpen(false);
 });

@@ -1,0 +1,9 @@
+.presentation {
+  position: inherit;
+  height: 80dvh;
+  padding: 15% 0 85% 0;
+  color: #e0b4b1;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: smaller;
+  backdrop-filter: blur(0.5rem);
+}
