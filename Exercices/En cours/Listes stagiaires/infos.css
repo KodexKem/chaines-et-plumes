@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  background-image: linear-gradient(to right, transparent, mistyrose),
+    url(space_background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: darkgray;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding: 20px;
+}
+
+.tableau {
+  width: 98%;
+  height: 98%;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.legend {
+  display: flex;
+  margin: 12px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: wheat;
+}
+
+div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.carte-formateur {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  border: 1px solid black;
+  height: 150px;
+  width: 1182px;
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: larger;
+  font-style: italic;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  color: chocolate;
+}
+
+.carte-stagiaire {
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  max-width: 320px;
+  color: brown;
+}
+
+.carte-stagiaire {
+  width: 260px;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bouton farceur</title>
+    <style>
+      body {
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+        font-family: Arial;
+      }
+
+      button {
+        position: absolute;
+        padding: 15px 25px;
+        font-size: 18px;
+        background-color: #ff4b4b;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="boutonFarceur">Attrape-moi si tu peux ! 😜</button>
+
+    <script>
+      const bouton = document.getElementById("boutonFarceur");
+
+      bouton.addEventListener("mouseover", () => {
+        const largeur = window.innerWidth;
+        const hauteur = window.innerHeight;
+
+        const x = Math.random() * (largeur - 150);
+        const y = Math.random() * (hauteur - 50);
+
+        bouton.style.left = x + "px";
+        bouton.style.top = y + "px";
+      });
+
+      bouton.addEventListener("click", () => {
+        alert("😄 Bravo ! Tu as réussi à me cliquer !");
+      });
+    </script>
+  </body>
+</html>

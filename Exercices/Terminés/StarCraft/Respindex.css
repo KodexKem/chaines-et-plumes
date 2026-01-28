@@ -1,0 +1,41 @@
+@media (max-width: 375px) {
+  body {
+    margin: 0;
+    min-height: 50vh;
+  }
+  header {
+    flex-direction: column;
+  }
+  .A {
+    margin: 1.5vh;
+  }
+  .A p {
+    margin-left: 1vh;
+    justify-content: center;
+  }
+  main {
+    height: 100%;
+    flex-flow: column wrap;
+  }
+  #B {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .G {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+  }
+  .TG img,
+  .GT img {
+    margin: 1vh;
+  }
+  .bg1,
+  .bg2,
+  .bg3 {
+    height: 20vh;
+  }
+  footer {
+    align-items: flex-end;
+  }
+}

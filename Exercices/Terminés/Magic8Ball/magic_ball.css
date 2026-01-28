@@ -1,0 +1,61 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+body {
+  height: 100%;
+  width: 100%;
+}
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 20vh;
+  background-image: url(MagicBall8.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 60%;
+}
+span {
+  color: blueviolet;
+}
+main {
+  height: 76vh;
+  background-image: url(MagicBall82.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+input {
+  height: 5vh;
+  border: none;
+  background: rgba(255, 250, 250, 0);
+  color: black;
+  font-size: xx-large;
+  font-family: cursive;
+}
+button {
+  height: 5vh;
+  width: 15vh;
+  border: none;
+  background: rgba(19, 48, 192, 0);
+}
+p {
+  color: #0000fe;
+  font-family: cursive;
+  font-size: 5vh;
+}
+footer {
+  height: 4vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+  color: black;
+  background: grey;
+}
