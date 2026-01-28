@@ -11,66 +11,57 @@ html {
 
 body {
   margin: 0;
-  min-height: 100vh;
   min-height: 100dvh;
   background: #000;
-
   display: flex;
   flex-direction: column;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 16px; /* Base mobile-friendly */
+  color: #fff;
 }
 
 main {
   flex: 1 0 auto;
+  padding: 1rem; /* Padding mobile par défaut */
 }
 
 .hero {
-  min-height: auto;
   width: 100%;
   background-image: url("assets/background.png");
   background-size: 180%;
   background-position: center;
   background-repeat: no-repeat;
+  text-align: center;
 }
 
 .topbar {
   position: sticky;
   top: 0;
   z-index: 9999;
-
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  padding: 10px 0;
-  gap: 10px;
-
+  padding: 0.5rem 0;
   background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(6px);
+  position: relative; /* Référence pour menu absolute */
 }
 
 .plate {
-  position: relative;
-  width: 72px;
-  height: 72px;
+  width: 48px; /* Plus petit pour mobile */
+  height: 48px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
-
   border: 0;
   background: transparent;
   padding: 0;
 }
 
-.plate:focus-visible {
-  outline: 2px solid #98352d;
-  outline-offset: 6px;
-  border-radius: 14px;
-}
-
 .plate svg {
-  width: 72px;
-  height: 72px;
+  width: 100%;
+  height: 100%;
   display: block;
 }
 
@@ -79,145 +70,103 @@ main {
   stroke: #98352d;
   stroke-width: 6;
   stroke-linecap: round;
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
 }
 
-.plate .burger,
-.plate .x {
-  position: absolute;
-  inset: 0;
+/* On n'a plus besoin de .burger et .x séparés → on anime directement les 3 lignes */
+
+.plate.is-open .line1 {
+  transform: translateY(10px) rotate(45deg); /* Ajuste translateY selon l'espacement voulu */
 }
 
-.plate8 .x {
-  transform: scale(0);
-  transform-origin: 50% 50%;
-  transition: transform 400ms 50ms;
+.plate.is-open .line2 {
+  opacity: 0 !important; /* Force la disparition */
+  visibility: hidden; /* Enlève du flux visuel */
+  transform: scale(
+    0
+  ); /* Option extra : réduit à zéro pour éviter tout résidu */
 }
-.plate8.is-open .x {
-  transform: scale(1);
+
+.plate.is-open .line3 {
+  transform: translateY(-10px) rotate(-45deg);
 }
-.plate8.is-open .burger {
-  opacity: 0.15;
+
+/* Option : effet gooey sur les lignes quand elles bougent */
+.plate .burger {
+  filter: url(#gooeyness);
 }
+
+.plate.is-open .burger {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Le reste reste identique */
 
 .menu {
+  position: absolute; /* Superposition ! */
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  pointer-events: none;
   width: min(92vw, 420px);
   display: grid;
-  grid-template-columns: 50% 50%;
-  gap: 10px;
-
+  grid-template-columns: 1fr; /* 1 colonne sur mobile pour simplicité */
+  gap: 0.5rem;
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transform: translateY(-6px);
   transition:
-    max-height 220ms ease,
-    opacity 220ms ease,
-    transform 220ms ease;
-
-  padding: 0 12px;
+    max-height 0.22s ease,
+    opacity 0.22s ease;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.65);
+  border-radius: 1rem;
+  border: 1px solid rgba(50, 15, 16, 0.35);
 }
 
 .menu.is-open {
+  pointer-events: auto;
   max-height: 320px;
   opacity: 1;
-  transform: translateY(0);
-  padding: 12px;
-  border-radius: 14px;
-  background: rgba(0, 0, 0, 0.65);
-  border: 1px solid rgba(50, 15, 16, 0.35);
+  padding: 0.75rem;
 }
 
 .menu a {
   text-decoration: none;
   color: #98352d;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  padding: 12px 12px;
-  border-radius: 12px;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  text-align: center;
 }
 
 .menu a:hover {
   background: rgba(255, 255, 255, 0.08);
 }
 
-.plate8 .line {
-  transition:
-    stroke-dasharray 400ms 100ms,
-    stroke-dashoffset 400ms 100ms,
-    transform 400ms 100ms;
-}
-
-.plate8 .line1 {
-  stroke-dasharray: 21 201;
-}
-.plate8 .line2 {
-  stroke-dasharray: 21 201;
-  transition-delay: 20ms;
-}
-.plate8 .line3 {
-  stroke-dasharray: 21 201;
-  transition-delay: 40ms;
-}
-.plate8 .line4 {
-  stroke-dasharray: 21 201;
-  transition-delay: 60ms;
-}
-.plate8 .line5 {
-  stroke-dasharray: 21 201;
-  transition-delay: 80ms;
-}
-.plate8 .line6 {
-  stroke-dasharray: 21 201;
-  transition-delay: 100ms;
-}
-
-.plate8.is-open .line {
-  transition:
-    stroke-dasharray 400ms,
-    stroke-dashoffset 400ms,
-    transform 400ms;
-}
-
-.plate8.is-open .line1 {
-  stroke-dasharray: 5 201;
-  stroke-dashoffset: -158px;
-}
-.plate8.is-open .line2 {
-  stroke-dasharray: 5 201;
-  stroke-dashoffset: -158px;
-  transition-delay: 20ms;
-}
-.plate8.is-open .line3 {
-  stroke-dasharray: 5 201;
-  stroke-dashoffset: -158px;
-  transition-delay: 40ms;
-}
-.plate8.is-open .line4 {
-  stroke-dasharray: 5 201;
-  stroke-dashoffset: -158px;
-  transition-delay: 60ms;
-}
-.plate8.is-open .line5 {
-  stroke-dasharray: 5 201;
-  stroke-dashoffset: -158px;
-  transition-delay: 80ms;
-}
-.plate8.is-open .line6 {
-  stroke-dasharray: 5 201;
-  stroke-dashoffset: -158px;
-  transition-delay: 100ms;
-}
-
-.home {
-  padding: 40px 16px;
-  color: #fff;
-  text-align: center;
-}
-
 footer {
-  flex: 0 0 auto;
-  padding: 12px 8px;
+  padding: 0.75rem;
   background-color: black;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: #98352d;
   text-align: center;
+  font-size: 0.875rem;
+}
+
+/* Media queries pour desktop (mobile-first : par défaut mobile) */
+@media (min-width: 768px) {
+  .plate {
+    width: 72px;
+    height: 72px;
+  }
+
+  .menu {
+    grid-template-columns: 50% 50%; /* 2 colonnes sur desktop */
+  }
+
+  main {
+    padding: 2rem;
+  }
 }
