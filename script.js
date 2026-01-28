@@ -21,7 +21,6 @@ menu.addEventListener("click", (e) => {
   if (e.target.matches("a")) setOpen(false);
 });
 
-// Fermeture au clic extérieur (essentiel mobile)
 document.addEventListener("click", (e) => {
   if (
     burgerBtn.classList.contains("is-open") &&
@@ -32,7 +31,6 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// Fermeture à Escape
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && burgerBtn.classList.contains("is-open")) {
     setOpen(false);

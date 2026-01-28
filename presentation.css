@@ -1,14 +1,12 @@
-/* Styles spécifiques à presentation.html (surcharge styles.css si besoin) */
-
 .presentation {
-  max-width: 90vw; /* Mobile-first : large sur petit écran */
+  max-width: 90vw;
   margin: 1rem auto;
   padding: 1rem;
   color: #e0b4b1;
-  font-size: 1rem; /* Lisible sur mobile */
+  font-size: 1rem;
   line-height: 1.5;
   background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(0.5rem); /* Floute fond, pas texte (avec background) */
+  backdrop-filter: blur(0.5rem);
   border-radius: 1rem;
   border: 1px solid rgba(50, 15, 16, 0.35);
 }
@@ -23,7 +21,6 @@
   margin: 0.75rem 0;
 }
 
-/* Media queries pour desktop */
 @media (min-width: 768px) {
   .presentation {
     max-width: 720px;

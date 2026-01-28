@@ -16,13 +16,13 @@ body {
   display: flex;
   flex-direction: column;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 16px; /* Base mobile-friendly */
+  font-size: 16px;
   color: #fff;
 }
 
 main {
   flex: 1 0 auto;
-  padding: 1rem; /* Padding mobile par défaut */
+  padding: 1rem;
 }
 
 .hero {
@@ -45,11 +45,11 @@ main {
   padding: 0.5rem 0;
   background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(6px);
-  position: relative; /* Référence pour menu absolute */
+  position: relative;
 }
 
 .plate {
-  width: 48px; /* Plus petit pour mobile */
+  width: 48px;
   height: 48px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
@@ -65,7 +65,6 @@ main {
   display: block;
 }
 
-/* Lignes du burger */
 .plate .line {
   fill: none;
   stroke: #98352d;
@@ -76,39 +75,32 @@ main {
     opacity 0.4s ease;
 }
 
-/* Quand menu ouvert : croix propre + disparition nette */
 .plate.is-open .line1 {
-  transform: translate(14px, 14px) rotate(45deg); /* Ajuste si besoin pour centrer parfaitement */
+  transform: translate(14px, 14px) rotate(45deg);
 }
 
 .plate.is-open .line2 {
   opacity: 0;
-  transform: scale(
-    0.01
-  ); /* Réduit à presque rien (plus fiable que opacity seule) */
-  visibility: hidden; /* Force l'invisibilité */
+  transform: scale(0.01);
+  visibility: hidden;
 }
 
 .plate.is-open .line3 {
   transform: translate(14px, -14px) rotate(-45deg);
 }
 
-/* Le SVG entier disparaît proprement quand ouvert (sécurité supplémentaire) */
 .plate.is-open .burger {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
 
-/* Effet gooey appliqué au SVG burger */
 .plate .burger {
   filter: url(#gooeyness);
 }
 
-/* Le reste reste identique */
-
 .menu {
-  position: absolute; /* Superposition ! */
+  position: absolute;
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
@@ -116,7 +108,7 @@ main {
   pointer-events: none;
   width: min(92vw, 420px);
   display: grid;
-  grid-template-columns: 1fr; /* 1 colonne sur mobile pour simplicité */
+  grid-template-columns: 1fr;
   gap: 0.5rem;
   max-height: 0;
   overflow: hidden;
@@ -157,7 +149,6 @@ footer {
   font-size: 0.875rem;
 }
 
-/* Media queries pour desktop (mobile-first : par défaut mobile) */
 @media (min-width: 768px) {
   .plate {
     width: 72px;
@@ -165,7 +156,7 @@ footer {
   }
 
   .menu {
-    grid-template-columns: 50% 50%; /* 2 colonnes sur desktop */
+    grid-template-columns: 50% 50%;
   }
 
   main {
