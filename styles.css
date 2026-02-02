@@ -139,6 +139,8 @@ main {
   padding: 0.75rem;
   border-radius: 0.75rem;
   text-align: center;
+  font-size: x-large;
+  font-family: "Allura" cursive;
 }
 
 .menu a:hover {
@@ -194,6 +196,8 @@ footer {
 
   .menu a {
     color: #98352d;
+    font-size: x-large;
+    font-family: "Allura" cursive;
   }
 
   footer {
