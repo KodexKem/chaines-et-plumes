@@ -34,6 +34,11 @@ main {
   text-align: center;
 }
 
+.hero h1 {
+  font-family: "Allura", cursive;
+  color: #98352d;
+}
+
 .topbar {
   position: sticky;
   top: 0;
