@@ -20,11 +20,3 @@
 .presentation p {
   margin: 0.75rem 0;
 }
-
-@media (min-width: 768px) {
-  .presentation {
-    max-width: 720px;
-    padding: 2rem;
-    font-size: 1.1rem;
-  }
-}
