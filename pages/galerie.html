@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Chaînes & Plumes : association pour créateurs et passionnés de BDSM."
+    />
+    <title>Chaînes & Plumes</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+
+  <body>
+    <header class="topbar">
+      <button
+        class="plate plate8"
+        id="burgerBtn"
+        type="button"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        aria-controls="siteMenu"
+      >
+        <svg aria-hidden="true" focusable="false">
+          <defs>
+            <filter id="gooeyness">
+              <feGaussianBlur
+                in="SourceGraphic"
+                stdDeviation="2.2"
+                result="blur"
+              />
+              <feColorMatrix
+                in="blur"
+                mode="matrix"
+                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10"
+                result="gooeyness"
+              />
+              <feComposite in="SourceGraphic" in2="gooeyness" operator="atop" />
+            </filter>
+          </defs>
+        </svg>
+
+        <svg
+          class="burger"
+          version="1.1"
+          viewBox="0 0 100 100"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path class="line line1" d="M20 30 H80" />
+          <path class="line line2" d="M20 50 H80" />
+          <path class="line line3" d="M20 70 H80" />
+        </svg>
+      </button>
+
+      <nav id="siteMenu" class="menu" aria-label="Menu principal">
+        <a href="/index.html">Accueil</a>
+        <a href="/pages/presentation.html">L’association</a>
+        <a href="/pages/evenements.html">Événements</a>
+        <a href="/pages/equipe.html">L'équipe</a>
+        <a href="#" aria-current="page">Galerie</a>
+        <a href="/pages/contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main class="hero"></main>
+
+    <footer>
+      <small
+        >Copyright © 2026 KodexKem - Chaînes & Plumes. Tous droits
+        réservés.</small
+      >
+    </footer>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

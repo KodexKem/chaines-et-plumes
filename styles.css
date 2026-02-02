@@ -27,7 +27,7 @@ main {
 
 .hero {
   width: 100%;
-  background-image: url("assets/background.png");
+  background-image: url("/assets/img/background.png");
   background-size: 180%;
   background-position: center;
   background-repeat: no-repeat;
