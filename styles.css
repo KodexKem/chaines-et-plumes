@@ -27,7 +27,7 @@ main {
 
 .hero {
   width: 100%;
-  background-image: url("/assets/img/background.png");
+  background-image: url("assets/img/background.png");
   background-size: 180%;
   background-position: center;
   background-repeat: no-repeat;
@@ -50,7 +50,6 @@ main {
   padding: 0.5rem 0;
   background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(6px);
-  position: relative;
 }
 
 .plate {
@@ -156,7 +155,7 @@ footer {
 
 @media (min-width: 768px) {
   .plate {
-    visibility: hidden;
+    display: none;
   }
 
   .topbar {
@@ -169,8 +168,7 @@ footer {
     width: 100%;
     background-image: url("assets/img/background.png");
     background-size: cover;
-    background-position: center;
-    background-position-y: top 30%;
+    background-position: center 30%;
     background-repeat: no-repeat;
     text-align: center;
   }
