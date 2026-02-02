@@ -167,8 +167,8 @@ footer {
 
   .hero {
     width: 100%;
-    background-image: url("assets/background.png");
-    background-size: 150%;
+    background-image: url("assets/img/background.png");
+    background-size: cover;
     background-position: center;
     background-position-y: top 30%;
     background-repeat: no-repeat;
