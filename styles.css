@@ -99,10 +99,6 @@ main {
   pointer-events: none;
 }
 
-.plate .burger {
-  filter: url(#gooeyness);
-}
-
 .menu {
   position: absolute;
   top: 100%;
@@ -140,7 +136,7 @@ main {
   border-radius: 0.75rem;
   text-align: center;
   font-size: x-large;
-  font-family: "Allura" cursive;
+  font-family: "Allura", cursive;
 }
 
 .menu a:hover {
@@ -197,10 +193,16 @@ footer {
   .menu a {
     color: #98352d;
     font-size: x-large;
-    font-family: "Allura" cursive;
+    font-family: "Allura", cursive;
   }
 
   footer {
     font-size: x-large;
+  }
+}
+
+@media (max-width: 767px) {
+  .plate .burger {
+    filter: none !important;
   }
 }
