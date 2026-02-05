@@ -1,0 +1,102 @@
+/* connect.css — pages connexion / adhésion
+   Se charge APRÈS styles.css
+   Objectif : garder header/burger/footer du site + centrer le bloc auth
+*/
+
+/* 1) Le "main.hero" devient une zone de centrage */
+main.hero {
+  flex: 1 0 auto; /* au cas où, mais body/main sont déjà en flex dans styles.css */
+  display: grid;
+  place-items: center; /* centre vertical + horizontal */
+  padding: 1rem; /* marge sur petits écrans */
+}
+
+/* 2) Section auth : prend toute la place du main */
+.auth {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+/* 3) La fenêtre floutée */
+.auth__window {
+  width: min(92vw, 520px);
+  margin-inline: auto; /* sécurité centrage horizontal */
+  padding: 1.25rem;
+  border-radius: 16px;
+  border: 1px solid rgba(50, 15, 16, 0.35);
+
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+
+  /* si l'écran est petit, on scroll à l'intérieur de la fenêtre plutôt que pousser le footer */
+  max-height: calc(100dvh - 140px); /* header+footer approximatifs */
+  overflow: auto;
+}
+
+/* 4) Typo / contenu du formulaire */
+.auth__title {
+  margin: 0 0 0.75rem 0;
+  color: #e4d0cf;
+  text-align: center;
+}
+
+.auth__form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.auth__field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.auth__label {
+  color: #e4d0cf;
+  font-size: 0.95rem;
+}
+
+.auth__input {
+  width: 100%;
+  padding: 0.85rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid rgba(228, 208, 207, 0.25);
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  outline: none;
+}
+
+.auth__input:focus {
+  border-color: rgba(152, 53, 45, 0.75);
+}
+
+.auth__btn {
+  margin-top: 0.25rem;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(152, 53, 45, 0.6);
+  background: rgba(152, 53, 45, 0.18);
+  color: #e4d0cf;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.auth__btn:hover {
+  background: rgba(152, 53, 45, 0.28);
+}
+
+.auth__hint {
+  margin: 0.5rem 0 0 0;
+  text-align: center;
+  color: rgba(228, 208, 207, 0.85);
+  font-size: 0.95rem;
+}
+
+.auth__hint a {
+  color: #e4d0cf;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
