@@ -1,8 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Chaînes & Plumes : association pour créateurs et passionnés de BDSM."
+    />
+    <title>Connexion — Chaînes & Plumes</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
@@ -10,75 +15,126 @@
     />
 
     <link rel="stylesheet" href="../assets/css/styles.css" />
-
-    <title>Animated login form - Bedimcode</title>
+    <link rel="stylesheet" href="../assets/css/connect.css" />
   </head>
+
   <body>
-    <div class="login">
-      <img
-        src="../assets/img/background.png"
-        alt="login image"
-        class="login__img"
-      />
+    <header class="topbar">
+      <button
+        class="plate plate8"
+        id="burgerBtn"
+        type="button"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        aria-controls="siteMenu"
+      >
+        <svg aria-hidden="true" focusable="false">
+          <defs>
+            <filter id="gooeyness">
+              <feGaussianBlur
+                in="SourceGraphic"
+                stdDeviation="2.2"
+                result="blur"
+              />
+              <feColorMatrix
+                in="blur"
+                mode="matrix"
+                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10"
+                result="gooeyness"
+              />
+              <feComposite in="SourceGraphic" in2="gooeyness" operator="atop" />
+            </filter>
+          </defs>
+        </svg>
 
-      <form action="" class="login__form">
-        <h1 class="login__title">Login</h1>
+        <svg
+          class="burger"
+          version="1.1"
+          viewBox="0 0 100 100"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path class="line line1" d="M20 30 H80" />
+          <path class="line line2" d="M20 50 H80" />
+          <path class="line line3" d="M20 70 H80" />
+        </svg>
+      </button>
 
-        <div class="login__content">
-          <div class="login__box">
-            <i class="ri-user-3-line login__icon"></i>
+      <nav id="siteMenu" class="menu" aria-label="Menu principal">
+        <a href="../index.html">Accueil</a>
+        <a href="./presentation.html">L’association</a>
+        <a href="./evenements.html">Événements</a>
+        <a href="./equipe.html">L'équipe</a>
+        <a href="./galerie.html">Galerie</a>
+        <a href="#" aria-current="page">Connexion</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+    </header>
 
-            <div class="login__box-input">
+    <main class="hero">
+      <section class="auth">
+        <div class="auth__window">
+          <h1 class="auth__title">Connexion</h1>
+
+          <form class="auth__form" action="#" method="post">
+            <div class="auth__field">
+              <label class="auth__label" for="email">E-mail</label>
               <input
+                class="auth__input"
+                id="email"
+                name="email"
                 type="email"
+                autocomplete="email"
                 required
-                class="login__input"
-                id="login-email"
-                placeholder=" "
               />
-              <label for="login-email" class="login__label">Email</label>
             </div>
-          </div>
 
-          <div class="login__box">
-            <i class="ri-lock-2-line login__icon"></i>
-
-            <div class="login__box-input">
-              <input
-                type="password"
-                required
-                class="login__input"
-                id="login-pass"
-                placeholder=" "
-              />
-              <label for="login-pass" class="login__label">Password</label>
-              <i class="ri-eye-off-line login__eye" id="login-eye"></i>
+            <div class="auth__field">
+              <label class="auth__label" for="login-pass">Mot de passe</label>
+              <div style="position: relative">
+                <input
+                  class="auth__input"
+                  id="login-pass"
+                  name="password"
+                  type="password"
+                  autocomplete="current-password"
+                  required
+                  style="padding-right: 2.5rem"
+                />
+                <i
+                  id="login-eye"
+                  class="ri-eye-off-line"
+                  style="
+                    position: absolute;
+                    right: 0.75rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    cursor: pointer;
+                    color: #ede6dc;
+                    opacity: 0.85;
+                  "
+                  aria-hidden="true"
+                ></i>
+              </div>
             </div>
-          </div>
+
+            <button class="auth__btn" type="submit">Se connecter</button>
+
+            <p class="auth__hint">
+              Pas encore membre ?
+              <a href="./adhesion.html">Créer un compte</a>
+            </p>
+          </form>
         </div>
+      </section>
+    </main>
 
-        <div class="login__check">
-          <div class="login__check-group">
-            <input
-              type="checkbox"
-              class="login__check-input"
-              id="login-check"
-            />
-            <label for="login-check" class="login__check-label"
-              >Remember me</label
-            >
-          </div>
-
-          <a href="#" class="login__forgot">Forgot Password?</a>
-        </div>
-
-        <button type="submit" class="login__button">Login</button>
-
-        <p class="login__register">
-          Don't have an account? <a href="#">Register</a>
-        </p>
-      </form>
-    </div>
+    <footer>
+      <small
+        >Copyright © 2026 KodexKem - Chaînes & Plumes. Tous droits
+        réservés.</small
+      >
+    </footer>
 
     <script src="../assets/js/script.js" defer></script>
   </body>
