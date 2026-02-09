@@ -45,7 +45,7 @@ main {
 .topbar {
   position: sticky;
   top: 0;
-  z-index: 9999;
+  z-index: 10000;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -107,7 +107,7 @@ main {
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 999;
+  z-index: 9999;
   pointer-events: none;
   width: min(92vw, 420px);
   display: grid;
@@ -147,17 +147,20 @@ main {
 }
 
 .docs {
-  animation: slidein 0.6s ease-out forwards;
-  width: 260px;
+  width: min(92vw, 260px);
   background-color: rgba(0, 0, 0, 0.9);
   position: fixed;
   border-radius: 1rem;
   border: 1px solid rgba(50, 15, 16, 0.35);
   font-family: "Allura", cursive;
-  top: 20px;
-  right: 20px;
-  z-index: 9999;
+  z-index: 9998;
   overflow: hidden;
+
+  top: 86px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  animation: docsSlideIn 0.6s ease-out forwards;
 }
 
 .docs__toggle {
@@ -185,30 +188,47 @@ main {
 }
 
 .docs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   max-height: 240px;
   overflow: auto;
-  color: #98352d;
+}
+
+.docs-list li {
+  margin-bottom: 0.6rem;
 }
 
 .docs-list a {
+  color: #e4d0cf;
   text-decoration: none;
-  color: #98352d;
+  display: block;
+  padding: 0.4rem 0.3rem;
+  border-radius: 6px;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.docs-list a:hover {
+  background: rgba(152, 53, 45, 0.25);
+  transform: translateX(4px);
 }
 
 footer {
   padding: 0.75rem;
-  background-color: black;
+  background-color: #000;
   color: #98352d;
   text-align: center;
   font-size: 0.875rem;
 }
 
-@keyframes slidein {
+@keyframes docsSlideIn {
   from {
-    transform: translateX(300px);
+    opacity: 0;
   }
   to {
-    transform: translateX(0);
+    opacity: 1;
   }
 }
 
@@ -227,12 +247,8 @@ footer {
   .event,
   .team,
   .gallery {
-    width: 100%;
-    background-image: url("../img/background.png");
     background-size: cover;
     background-position: center 30%;
-    background-repeat: no-repeat;
-    text-align: center;
   }
 
   .menu {
@@ -249,15 +265,31 @@ footer {
     opacity: 1;
     pointer-events: auto;
     padding: 0.75rem;
-    background: rgba(0, 0, 0, 0.65);
-    border-radius: 1rem;
-    border: 1px solid rgba(50, 15, 16, 0.35);
   }
 
   .menu a {
     color: #98352d;
     font-size: x-large;
-    font-family: "Allura", cursive;
+  }
+
+  .docs {
+    top: 20px;
+    right: 20px;
+    left: auto;
+    transform: none;
+    width: 260px;
+    z-index: 10001;
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    transform: none;
+    will-change: auto;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.95);
+
+    isolation: isolate;
   }
 
   footer {
