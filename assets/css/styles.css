@@ -163,6 +163,32 @@ main {
   z-index: 9999;
 }
 
+.docs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.docs-list li {
+  margin-bottom: 0.6rem;
+}
+
+.docs-list a {
+  color: #e4d0cf;
+  text-decoration: none;
+  display: block;
+  padding: 0.4rem 0.3rem;
+  border-radius: 6px;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.docs-list a:hover {
+  background: rgba(152, 53, 45, 0.25);
+  transform: translateX(4px);
+}
+
 footer {
   padding: 0.75rem;
   background-color: black;
