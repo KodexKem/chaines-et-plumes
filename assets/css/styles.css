@@ -148,12 +148,8 @@ main {
 
 .docs {
   animation: slidein 0.6s ease-out forwards;
-  height: 50px;
-  width: 200px;
-  background-color: black;
-  text-align: center;
-  align-content: center;
-  color: #98352d;
+  width: 260px;
+  background-color: rgba(0, 0, 0, 0.9);
   position: fixed;
   border-radius: 1rem;
   border: 1px solid rgba(50, 15, 16, 0.35);
@@ -161,32 +157,42 @@ main {
   top: 20px;
   right: 20px;
   z-index: 9999;
+  overflow: hidden;
+}
+
+.docs__toggle {
+  height: 50px;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  color: #98352d;
+  font-family: inherit;
+  font-size: 1.4rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.docs__panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  padding: 0 0.75rem;
+}
+
+.docs.open .docs__panel {
+  max-height: 320px;
+  padding-bottom: 0.75rem;
 }
 
 .docs-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.docs-list li {
-  margin-bottom: 0.6rem;
+  max-height: 240px;
+  overflow: auto;
+  color: #98352d;
 }
 
 .docs-list a {
-  color: #e4d0cf;
   text-decoration: none;
-  display: block;
-  padding: 0.4rem 0.3rem;
-  border-radius: 6px;
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
-}
-
-.docs-list a:hover {
-  background: rgba(152, 53, 45, 0.25);
-  transform: translateX(4px);
+  color: #98352d;
 }
 
 footer {

@@ -57,4 +57,15 @@
       }
     });
   }
+
+  const docsBox = document.getElementById("docsBox");
+
+  if (docsBox) {
+    const toggle = docsBox.querySelector(".docs__toggle");
+
+    toggle.addEventListener("click", () => {
+      const isOpen = docsBox.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+    });
+  }
 })();
