@@ -1,27 +1,19 @@
-/* connect.css — pages connexion / adhésion
-   Se charge APRÈS styles.css
-   Objectif : garder header/burger/footer du site + centrer le bloc auth
-*/
-
-/* 1) Le "main.hero" devient une zone de centrage */
 main.hero {
-  flex: 1 0 auto; /* au cas où, mais body/main sont déjà en flex dans styles.css */
+  flex: 1 0 auto;
   display: grid;
-  place-items: center; /* centre vertical + horizontal */
-  padding: 1rem; /* marge sur petits écrans */
+  place-items: center;
+  padding: 1rem;
 }
 
-/* 2) Section auth : prend toute la place du main */
 .auth {
   width: 100%;
   display: grid;
   place-items: center;
 }
 
-/* 3) La fenêtre floutée */
 .auth__window {
   width: min(92vw, 520px);
-  margin-inline: auto; /* sécurité centrage horizontal */
+  margin-inline: auto;
   padding: 1.25rem;
   border-radius: 16px;
   border: 1px solid rgba(50, 15, 16, 0.35);
@@ -32,12 +24,10 @@ main.hero {
 
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
 
-  /* si l'écran est petit, on scroll à l'intérieur de la fenêtre plutôt que pousser le footer */
-  max-height: calc(100dvh - 140px); /* header+footer approximatifs */
+  max-height: calc(100dvh - 140px);
   overflow: auto;
 }
 
-/* 4) Typo / contenu du formulaire */
 .auth__title {
   margin: 0 0 0.75rem 0;
   color: #e4d0cf;
