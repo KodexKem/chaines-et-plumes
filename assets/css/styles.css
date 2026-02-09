@@ -146,12 +146,38 @@ main {
   background: rgba(255, 255, 255, 0.08);
 }
 
+.docs {
+  animation: slidein 0.6s ease-out forwards;
+  height: 50px;
+  width: 200px;
+  background-color: black;
+  text-align: center;
+  align-content: center;
+  color: #98352d;
+  position: fixed;
+  border-radius: 1rem;
+  border: 1px solid rgba(50, 15, 16, 0.35);
+  font-family: "Allura", cursive;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
 footer {
   padding: 0.75rem;
   background-color: black;
   color: #98352d;
   text-align: center;
   font-size: 0.875rem;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(300px);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 @media (min-width: 768px) {
